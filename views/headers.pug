@@ -1,0 +1,29 @@
+div#header
+    style
+        include page.css
+    if session && session.loggedin
+        span 
+            a(href="/") Home
+        span
+            a(href="/profile/"+ session.userid) My Profile
+        span
+            a(href="/following") Following
+        span
+            a(href="/gallery") Search for Artwork
+        span
+            a(href="/users") View Users
+        span
+            a(href="/logout") Logout
+
+    else
+        br
+        a(href="/register") Register
+        br
+        br
+        form(action="/login" method="post")
+            | Username:
+            input(type="text" name="username" required)
+            |   Password:
+            input(type="password" name="password" required)
+            |  
+            button(type="submit") Login

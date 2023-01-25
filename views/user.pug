@@ -1,0 +1,40 @@
+html
+    head
+        title #{item.username}'s Profile
+        style
+            include regular.css
+body
+    span 
+        a(href="/") Home
+    span
+        a(href="/profile/"+ session.userid) My Profile
+    span
+        a(href="/following") Following
+    span
+        a(href="/gallery") Search for Artwork
+    span
+        a(href="/users") View Users
+    span
+        a(href="/logout") Logout
+div#main
+    h1 #{item.username}'s Profile
+    if item.artist == false
+        p #{item.username} is a regular user
+    if item.artist == true
+        h3 #{item.username} is an artist
+        br
+        button(onclick="follow()") Follow Artist
+        br
+    h3 #{item.username}'s Gallery
+    each artwork in item.uploads
+        div
+            img(src=artwork.image)
+            p #{artwork.name}
+            p #{artwork.artist}
+            p #{artwork.year}
+            p #{artwork.category}
+            p #{artwork.medium}
+            p #{artwork.description}
+    input(type="text" value=item._id id="id")
+    input(type="text" value=item .username id="username")
+    script(src="/follow.js")    

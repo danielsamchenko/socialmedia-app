@@ -1,0 +1,12 @@
+HTML
+    title Search Page
+    style
+        include search.css
+    head
+        h1 Search Page
+body
+    each item in items
+        a(href="/gallery/" + item._id) #{item.name} by #{item.artist}
+        br
+        img(class='searchimage' src=item.image)
+        br

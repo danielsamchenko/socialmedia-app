@@ -1,0 +1,10 @@
+HTML
+    title Users Page
+    style
+        include page.css
+    head
+        h1 View Users
+body
+    each item in items
+        a(href="/users/" + item._id) #{item.username}
+        br

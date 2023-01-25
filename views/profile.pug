@@ -1,0 +1,47 @@
+html
+    head
+        title #{item.username}'s Profile
+        style
+            include regular.css
+body
+    include ./headers
+    div#main
+        if session && session.loggedin
+            h1 #{item.username}'s Profile
+            if session.artist == false
+                p You are a regular user
+                input(type="button" value="Become an Artist" onclick='becomeArtist("'+ session +'")')
+            if session.artist == true
+                h3 You are an artist
+                p Post artwork to your gallery:
+                br
+                input(type="text" value="Enter Name" id="name")
+                br
+                input(type="text" value="Enter Artist Name" id="artist")
+                br
+                input(type="text" value="Enter Year" id="year")
+                br
+                input(type="text" value="Enter Category" id="category")
+                br
+                input(type="text" value="Enter Medium" id="medium")
+                br
+                input(type="text" value="Enter Description" id="description")
+                br
+                input(type="text" value="Enter URL" id="url")
+                br
+                br
+                button(onclick="addArtwork()") Add Artwork
+                br
+                br
+                input(type="button" value="Become a User" onclick='becomeUser("'+ session +'")')
+            h3 #{item.username}'s Gallery
+            each artwork in item.uploads
+                div
+                    img(src=artwork.image)
+                    p #{artwork.name}
+                    p #{artwork.artist}
+                    p #{artwork.year}
+                    p #{artwork.category}
+                    p #{artwork.medium}
+                    p #{artwork.description}
+            script(src="/profile.js")

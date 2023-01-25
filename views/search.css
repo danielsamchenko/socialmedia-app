@@ -1,0 +1,29 @@
+body{
+    background-image: url('purple.png');
+
+    font-family: 'Trebuchet MS', sans-serif;
+    color: whitesmoke;
+    text-shadow: 1px 1px 1px purple;
+}
+a:link, a:visited {
+    background-color: darkmagenta;
+    color: whitesmoke;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+button{
+    background-color: grey;
+    color: whitesmoke;
+    padding: 1px 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.searchimage {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    length: 30%;
+}

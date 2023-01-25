@@ -1,0 +1,28 @@
+html
+    head
+        title(id="title") #{item.name}
+        style
+            include regular.css
+body
+    span 
+        a(href="/") Home
+    span
+        a(href="/profile") My Profile
+    span
+        a(href="/following") Following
+    span
+        a(href="/gallery") Search for Artwork
+    span
+        a(href="/users") View Users
+    span
+        a(href="/logout") Logout
+    script(src="../artwork.js")
+    h1(id="artName") #{item.name}
+    h4 Artist name: #{item.artist}
+    h4 Year: #{item.year}
+    h4 Category: #{item.category}
+    h4 Medium: #{item.medium}
+    h4(id="likes") Likes: #{item.likes}
+    button(onclick="like()") Add a Like
+    h4 Description: #{item.description}
+    img(class='image' src=item.image)

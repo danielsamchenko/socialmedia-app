@@ -1,0 +1,14 @@
+HTML
+    title Following Page
+    style
+        include page.css
+    head
+        h1 View Following
+body
+    include ./headers
+    br
+    br
+    each item in items.following
+        br
+        a(href="/users/" + item.followId) #{item.followUsername}
+        br

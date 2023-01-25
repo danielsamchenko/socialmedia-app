@@ -1,0 +1,17 @@
+html
+	head
+		title Register User
+		style
+			include page.css
+
+	body
+		div#error(style="color:red")
+		div
+			| Username:
+			input#name(type="textbox")
+		div
+			| Password:
+			input#pass(type="password")
+		div
+			button#submit(type="button") Register
+		script(src="/register.js")
